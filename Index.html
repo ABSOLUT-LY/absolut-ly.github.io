@@ -845,48 +845,132 @@
                 id: 8,
                 title: "Билет 8: Архитектура ИС и её проектирование",
                 desc: "Организационная структура взаимодействия узлов и 3 классических логических слоя ИС",
-                theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">🏛️</span>
-                                Суть архитектуры
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Архитектура ИС — это организационная структура системы, определяющая взаимодействие клиентских, серверных и сетевых компонентов.
-                            </p>
+                                theoryHTML: `
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 8)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 8)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
                         </div>
 
-                        <!-- Logical Layers Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Логическая схема слоев ИС
-                            </h4>
-                            <div class="flex flex-col space-y-4 max-w-lg mx-auto">
-                                <div class="relative group p-4 bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/40 hover:border-blue-400 rounded-xl text-center transition-all cursor-pointer">
-                                    <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Слой 1</span>
-                                    <span class="font-extrabold text-primary text-sm">Представление данных</span>
-                                    <p class="text-[10px] text-muted mt-1">Интерфейс пользователя (GUI, веб-страницы, формы ввода)</p>
-                                </div>
-                                
-                                <div class="flex justify-center">
-                                    <span class="text-indigo-500 font-bold animate-pulse">↓ ↑</span>
-                                </div>
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">🏛️</span>
+                                    Суть архитектуры
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Архитектура ИС — это организационная структура системы, определяющая взаимодействие клиентских, серверных и сетевых компонентов.
+                                </p>
+                            </div>
 
-                                <div class="relative group p-4 bg-gradient-to-r from-purple-900/40 to-pink-900/40 border border-purple-500/40 hover:border-purple-400 rounded-xl text-center transition-all cursor-pointer">
-                                    <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest block">Слой 2</span>
-                                    <span class="font-extrabold text-primary text-sm">Бизнес-логика</span>
-                                    <p class="text-[10px] text-muted mt-1">Алгоритмы обработки, вычисления и правила предметной области</p>
-                                </div>
+                            <!-- Logical Layers Schema -->
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Логическая схема слоев ИС
+                                </h4>
+                                <div class="flex flex-col space-y-4 max-w-lg mx-auto">
+                                    <div class="relative group p-4 bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/40 hover:border-blue-400 rounded-xl text-center transition-all cursor-pointer">
+                                        <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest block">Слой 1</span>
+                                        <span class="font-extrabold text-primary text-sm">Представление данных</span>
+                                        <p class="text-[10px] text-muted mt-1">Интерфейс пользователя (GUI, веб-страницы, формы ввода)</p>
+                                    </div>
+                                    
+                                    <div class="flex justify-center">
+                                        <span class="text-indigo-500 font-bold animate-pulse">↓ ↑</span>
+                                    </div>
 
-                                <div class="flex justify-center">
-                                    <span class="text-indigo-500 font-bold animate-pulse">↓ ↑</span>
-                                </div>
+                                    <div class="relative group p-4 bg-gradient-to-r from-purple-900/40 to-pink-900/40 border border-purple-500/40 hover:border-purple-400 rounded-xl text-center transition-all cursor-pointer">
+                                        <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest block">Слой 2</span>
+                                        <span class="font-extrabold text-primary text-sm">Бизнес-логика</span>
+                                        <p class="text-[10px] text-muted mt-1">Алгоритмы обработки, вычисления и правила предметной области</p>
+                                    </div>
 
-                                <div class="relative group p-4 bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/40 hover:border-emerald-400 rounded-xl text-center transition-all cursor-pointer">
-                                    <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Слой 3</span>
-                                    <span class="font-extrabold text-primary text-sm">Доступ к данным</span>
-                                    <p class="text-[10px] text-muted mt-1">СУБД (Хранение, индексирование и выборка данных)</p>
+                                    <div class="flex justify-center">
+                                        <span class="text-indigo-500 font-bold animate-pulse">↓ ↑</span>
+                                    </div>
+
+                                    <div class="relative group p-4 bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/40 hover:border-emerald-400 rounded-xl text-center transition-all cursor-pointer">
+                                        <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">Слой 3</span>
+                                        <span class="font-extrabold text-primary text-sm">Доступ к данным</span>
+                                        <p class="text-[10px] text-muted mt-1">СУБД (Хранение, индексирование и выборка данных)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Logical -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-indigo-400 text-center">
+                                    Логическая структура архитектуры (Слайд)
+                                </h4>
+                                <div class="min-w-[650px] space-y-4 p-2">
+                                    <!-- Grid Headers (Actors) -->
+                                    <div class="grid grid-cols-12 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-3 text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 py-1.5 rounded-lg">Сервер</div>
+                                        <div class="col-span-3 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 py-1.5 rounded-lg">Устройства системы</div>
+                                    </div>
+
+                                    <!-- Row 1: Слой представления -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[70px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center flex items-center justify-center h-full hover:border-indigo-400/50 hover:bg-subtle/10 transition-all">
+                                            <span class="text-xs text-primary font-medium">Интерфейс клиента</span>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center flex items-center justify-center h-full hover:border-purple-400/50 hover:bg-subtle/10 transition-all relative">
+                                            <span class="text-xs text-primary font-medium">Интерфейс клиента</span>
+                                            <div class="absolute -left-6 top-1/2 -translate-y-1/2 flex items-center z-10">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm">◀▶</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 2: Слой бизнес-логики -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[70px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-3 bg-purple-950/20 border border-purple-500/30 rounded-xl text-center flex flex-col justify-center items-center h-full hover:border-purple-400 hover:bg-purple-900/10 transition-all relative">
+                                            <span class="text-xs text-purple-300 font-bold">Организация доступа к данным</span>
+                                            <div class="absolute -top-5 left-1/2 -translate-x-1/2 z-10">
+                                                <span class="text-purple-400 animate-pulse text-[10px]">▲▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 3: Слой доступа к данным -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[70px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center flex flex-col justify-center h-full hover:border-indigo-400/50 hover:bg-subtle/10 transition-all relative">
+                                            <span class="text-xs text-primary font-medium">Обработка данных</span>
+                                            <div class="absolute -top-[52px] left-1/2 -translate-x-1/2 z-10 h-[48px] border-l border-dashed border-indigo-500/50 flex items-center justify-center">
+                                                <span class="bg-card text-indigo-400 text-[8px] px-0.5 rounded">▲▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center flex items-center justify-center h-full hover:border-purple-400/50 hover:bg-subtle/10 transition-all relative">
+                                            <span class="text-xs text-primary font-medium">Обработка данных, передача данных</span>
+                                            <div class="absolute -top-5 left-1/2 -translate-x-1/2 z-10">
+                                                <span class="text-purple-400 animate-pulse text-[10px]">▲▼</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center flex flex-col justify-center items-center h-full hover:border-emerald-400 hover:bg-emerald-950/40 transition-all relative">
+                                            <span class="text-xs text-emerald-300 font-bold">Хранение и формирование данных</span>
+                                            <div class="absolute -top-[44px] -left-12 z-10 w-16 h-[40px] flex items-center justify-center">
+                                                <span class="text-emerald-400 font-bold rotate-[25deg] text-xs animate-pulse">◀▶</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -898,59 +982,165 @@
                 title: "Билет 9: Двухуровневая файл-серверная архитектура",
                 desc: "Пассивное файловое хранилище, передача БД целиком по ЛВС и толстый клиент",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">💾</span>
-                                Принцип файл-сервера
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Сервер работает как «флешка» — просто хранит общие файлы БД. Клиент («толстый») скачивает файлы полностью, сам ищет и обрабатывает информацию.
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 9)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 9)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
+                            <button onclick="switchTheoryTab(this, 'physical', 9)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">🧱 Физическая структура</button>
                         </div>
 
-                        <!-- Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-amber-500">
-                                Визуальная схема файл-серверной архитектуры
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
-                                <div class="p-4 bg-page/60 border border-subtle rounded-xl text-center">
-                                    <span class="text-[10px] text-amber-500 font-bold block">ФАЙЛ-СЕРВЕР («Флешка»)</span>
-                                    <span class="font-extrabold text-primary text-xs">Пассивный диск</span>
-                                    <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-subtle">
-                                        [db_table.dbf]<br>[db_index.idx]
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">💾</span>
+                                    Принцип файл-сервера
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Сервер работает как «флешка» — просто хранит общие файлы БД. Клиент («толстый») скачивает файлы полностью, сам ищет и обрабатывает информацию.
+                                </p>
+                            </div>
+
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-amber-500">
+                                    Визуальное представление файл-сервера
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
+                                    <div class="p-4 bg-page/60 border border-subtle rounded-xl text-center">
+                                        <span class="text-[10px] text-amber-500 font-bold block">ФАЙЛ-СЕРВЕР («Флешка»)</span>
+                                        <span class="font-extrabold text-primary text-xs">Пассивный диск</span>
+                                        <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-subtle">
+                                            [db_table.dbf]<br>[db_index.idx]
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-red-500 font-bold text-center text-[10px]">← Файлы целиком (100% БД)</span>
+                                        <div class="w-full bg-red-900/20 border border-red-500/30 h-2 rounded my-1 relative overflow-hidden">
+                                            <div class="absolute inset-y-0 left-0 bg-red-500 w-1/2 animate-[ping_1.5s_infinite]"></div>
+                                        </div>
+                                        <span class="text-[9px] text-muted">ЛВС (Огромный трафик)</span>
+                                    </div>
+                                    <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-indigo-400 font-bold block">ТОЛСТЫЙ КЛИЕНТ</span>
+                                        <div class="mt-2 space-y-1 text-[9px] text-primary">
+                                            <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Слой представления (GUI)</div>
+                                            <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Бизнес-логика</div>
+                                            <div class="p-1 bg-red-900/40 border border-red-500/20 rounded font-bold">Ядро СУБД (Локальный поиск)</div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="flex flex-col items-center">
-                                    <span class="text-red-500 font-bold text-center text-[10px]">← Файлы целиком (100% БД)</span>
-                                    <div class="w-full bg-red-900/20 border border-red-500/30 h-2 rounded my-1 relative overflow-hidden">
-                                        <div class="absolute inset-y-0 left-0 bg-red-500 w-1/2 animate-[ping_1.5s_infinite]"></div>
-                                    </div>
-                                    <span class="text-[9px] text-muted">ЛВС (Огромный трафик)</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
+                                    <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
+                                    <p class="mt-1 text-xs">Простота реализации, централизованный доступ к общим файлам.</p>
                                 </div>
+                                <div class="bg-card p-4 rounded-xl border border-brandError/20">
+                                    <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
+                                    <p class="mt-1 text-xs">Колоссальная нагрузка на сеть, крайне низкая производительность при увеличении объема БД.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-indigo-400 font-bold block">ТОЛСТЫЙ КЛИЕНТ</span>
-                                    <div class="mt-2 space-y-1 text-[9px] text-primary">
-                                        <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Слой представления (GUI)</div>
-                                        <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Бизнес-логика</div>
-                                        <div class="p-1 bg-red-900/40 border border-red-500/20 rounded font-bold">Ядро СУБД (Локальный поиск)</div>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-amber-500 text-center">
+                                    Логическая структура файл-серверной архитектуры
+                                </h4>
+                                <div class="min-w-[600px] space-y-4 p-2">
+                                    <div class="grid grid-cols-11 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-4 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-4 text-xs font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 py-1.5 rounded-lg">Файловый сервер</div>
+                                    </div>
+
+                                    <!-- Presentation -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[60px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-4 p-2 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-xs text-primary">Интерфейс клиента</span>
+                                        </div>
+                                        <div class="col-span-4 p-2 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-xs text-primary">Интерфейс сервера</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Business Logic -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[60px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-4 p-2 bg-indigo-950/20 border border-indigo-500/20 rounded-xl text-center relative">
+                                            <span class="text-xs text-indigo-300 font-bold">Обращение к данным</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[8px] text-indigo-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-4"></div>
+                                    </div>
+
+                                    <!-- Access -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[60px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-indigo-950/20 border border-indigo-500/30 rounded-xl text-center relative hover:border-indigo-400">
+                                            <span class="text-xs text-indigo-300 font-bold">Отображение и обработка данных</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[8px] text-indigo-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-amber-950/20 border border-amber-500/30 rounded-xl text-center relative hover:border-amber-400">
+                                            <span class="text-xs text-amber-300 font-bold">Хранение и управление данными</span>
+                                            <!-- Bidirectional Arrow -->
+                                            <div class="absolute -left-6 top-1/2 -translate-y-1/2 z-10">
+                                                <span class="text-red-400 animate-pulse font-extrabold text-sm">◀▶</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pros and Cons -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
-                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
-                                <p class="mt-1 text-xs">Простота реализации, централизованный доступ к общим файлам.</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-brandError/20">
-                                <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
-                                <p class="mt-1 text-xs">Колоссальная нагрузка на сеть, крайне низкая производительность при увеличении объема БД.</p>
+                        <!-- Tab 3: Physical Structure -->
+                        <div class="tab-panel tab-panel-physical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle text-center">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-8 text-amber-500">
+                                    Физическая структура файл-серверной архитектуры
+                                </h4>
+                                
+                                <div class="max-w-md mx-auto space-y-6 relative p-4">
+                                    <!-- File Server Node -->
+                                    <div class="p-4 bg-gradient-to-r from-amber-950/40 to-amber-900/40 border border-amber-500 rounded-2xl max-w-[200px] mx-auto relative hover:scale-[1.03] transition-transform shadow-lg shadow-amber-950/20">
+                                        <span class="text-[9px] text-amber-400 font-extrabold uppercase tracking-widest block mb-1">Файловый сервер</span>
+                                        <span class="text-xs text-primary font-bold block">Центральный ПК</span>
+                                        <span class="text-[9px] text-muted block mt-1">(Хранение файлов БД)</span>
+                                    </div>
+
+                                    <!-- Switch/Cable Connectors -->
+                                    <div class="flex flex-col items-center">
+                                        <div class="w-0.5 h-6 border-l-2 border-dashed border-subtle"></div>
+                                        <div class="px-4 py-2 bg-page border border-subtle rounded-xl text-xs font-bold text-primary flex items-center gap-2 hover:border-brandActive transition-colors shadow">
+                                            <span class="w-2 h-2 rounded-full bg-brandSuccess animate-pulse"></span>
+                                            Сетевое оборудование (ЛВС)
+                                        </div>
+                                        <div class="w-0.5 h-6 border-l-2 border-dashed border-subtle"></div>
+                                    </div>
+
+                                    <!-- Client Nodes -->
+                                    <div class="grid grid-cols-5 gap-2 items-center">
+                                        <div class="col-span-2 p-3 bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400 rounded-xl hover:scale-[1.03] transition-transform">
+                                            <span class="text-[9px] text-indigo-400 font-extrabold block">Клиент 1</span>
+                                            <span class="text-[10px] text-primary">Толстый клиент</span>
+                                        </div>
+                                        <div class="col-span-1 text-muted text-center font-bold text-lg">...</div>
+                                        <div class="col-span-2 p-3 bg-indigo-950/30 border border-indigo-500/30 hover:border-indigo-400 rounded-xl hover:scale-[1.03] transition-transform">
+                                            <span class="text-[9px] text-indigo-400 font-extrabold block">Клиент N</span>
+                                            <span class="text-[10px] text-primary">Толстый клиент</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -960,59 +1150,127 @@
                 id: 10,
                 title: "Билет 10: Двухуровневая клиент-серверная архитектура",
                 desc: "Активный сервер БД, отправка SQL-запросов и локальное выполнение бизнес-логики",
-                theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚙️</span>
-                                Принцип клиент-сервера
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Используется двухуровневая <a href="#" onclick="openTerm('клиент_серверная_архитектура'); return false;" class="term-link text-gold underline hover:text-amber-400">клиент-серверная архитектура</a>. На сервере функционирует СУБД; клиент формирует и отправляет SQL-запрос, а сервер самостоятельно производит выборку и возвращает только результат.
-                            </p>
+                                theoryHTML: `
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 10)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 10)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
                         </div>
 
-                        <!-- Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема двухуровневого клиент-сервера
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
-                                <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-indigo-400 font-bold block">ТОЛСТЫЙ КЛИЕНТ</span>
-                                    <div class="mt-2 space-y-1 text-[9px] text-primary">
-                                        <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Интерфейс (GUI)</div>
-                                        <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded font-bold">Бизнес-логика</div>
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚙️</span>
+                                    Принцип клиент-сервера
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Используется двухуровневая <a href="#" onclick="openTerm('клиент_серверная_архитектура'); return false;" class="term-link text-gold underline hover:text-amber-400">клиент-серверная архитектура</a>. На сервере функционирует СУБД; клиент формирует и отправляет SQL-запрос, а сервер самостоятельно производит выборку и возвращает только результат.
+                                </p>
+                            </div>
+
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема двухуровневого клиент-сервера
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
+                                    <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-indigo-400 font-bold block">ТОЛСТЫЙ КЛИЕНТ</span>
+                                        <div class="mt-2 space-y-1 text-[9px] text-primary">
+                                            <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded">Интерфейс (GUI)</div>
+                                            <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded font-bold">Бизнес-логика</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center">
+                                        <span class="text-indigo-400 font-bold text-[9px]">SQL-запрос (Текст) →</span>
+                                        <div class="w-full bg-brandActive/20 border border-brandActive/30 h-2 rounded my-1 relative overflow-hidden">
+                                            <div class="absolute inset-y-0 left-0 bg-brandActive w-1/4 animate-[ping_1.5s_infinite]"></div>
+                                        </div>
+                                        <span class="text-emerald-400 font-bold text-[9px]">← Результат (Только строки)</span>
+                                    </div>
+                                    <div class="p-4 bg-page/60 border border-emerald-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-emerald-400 font-bold block">АКТИВНЫЙ СЕРВЕР БД</span>
+                                        <span class="font-extrabold text-primary text-xs">Выделенная СУБД</span>
+                                        <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-emerald-500/20">
+                                            Поиск, фильтрация и сортировка данных на сервере
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="flex flex-col items-center text-center">
-                                    <span class="text-indigo-400 font-bold text-[9px]">SQL-запрос (Текст) →</span>
-                                    <div class="w-full bg-brandActive/20 border border-brandActive/30 h-2 rounded my-1 relative overflow-hidden">
-                                        <div class="absolute inset-y-0 left-0 bg-brandActive w-1/4 animate-[ping_1.5s_infinite]"></div>
-                                    </div>
-                                    <span class="text-emerald-400 font-bold text-[9px]">← Результат (Только строки)</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
+                                    <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
+                                    <p class="mt-1 text-xs">Существенная разгрузка сети, высокий уровень целостности и безопасности базы данных.</p>
                                 </div>
-
-                                <div class="p-4 bg-page/60 border border-emerald-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-emerald-400 font-bold block">АКТИВНЫЙ СЕРВЕР БД</span>
-                                    <span class="font-extrabold text-primary text-xs">Выделенная СУБД</span>
-                                    <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-emerald-500/20">
-                                        Поиск, фильтрация и сортировка данных на сервере
-                                    </div>
+                                <div class="bg-card p-4 rounded-xl border border-brandError/20">
+                                    <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
+                                    <p class="mt-1 text-xs">Вся прикладная бизнес-логика выполняется на клиенте («толстые» клиенты), что сильно затрудняет администрирование и обновление ПО.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pros and Cons -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
-                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
-                                <p class="mt-1 text-xs">Существенная разгрузка сети, высокий уровень целостности и безопасности базы данных.</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-brandError/20">
-                                <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
-                                <p class="mt-1 text-xs">Вся прикладная бизнес-логика выполняется на клиенте («толстые» клиенты), что сильно затрудняет администрирование и обновление ПО.</p>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-indigo-400 text-center">
+                                    Логическая структура двухуровневого клиент-сервера
+                                </h4>
+                                <div class="min-w-[600px] space-y-4 p-2">
+                                    <div class="grid grid-cols-11 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-4 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-4 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 py-1.5 rounded-lg">Сервер БД</div>
+                                    </div>
+
+                                    <!-- Presentation -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[65px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-xs text-primary font-medium">Интерфейс клиента</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-xs text-primary font-medium">Интерфейс сервера</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Business Logic -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[65px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-indigo-950/20 border border-indigo-500/20 rounded-xl text-center relative hover:border-indigo-400">
+                                            <span class="text-xs text-indigo-300 font-bold">Операторы обращения к СУБД, бизнес-логика</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[8px] text-indigo-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-4"></div>
+                                    </div>
+
+                                    <!-- Access -->
+                                    <div class="grid grid-cols-11 gap-4 items-center min-h-[90px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-4"></div>
+                                        <div class="col-span-4 p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center relative hover:border-emerald-400">
+                                            <div class="space-y-1">
+                                                <div class="text-[10px] text-emerald-400 font-bold border-b border-emerald-500/20 pb-1">Хранимые процедуры</div>
+                                                <div class="text-[9px] text-primary">Выполнение запросов, обработка транзакций, хранение и управление базой данных</div>
+                                            </div>
+                                            <!-- Bidirectional diagonal arrow from Client Business Logic to Server Database Access Layer -->
+                                            <div class="absolute -left-12 -top-8 z-10 w-16 h-8 flex items-center justify-center">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm rotate-[30deg]">◀▶</span>
+                                            </div>
+                                            <!-- Vertical arrow inside server -->
+                                            <div class="absolute -top-[65px] left-1/2 -translate-x-1/2 z-10 h-[60px] border-l border-dashed border-emerald-500/50 flex items-center justify-center">
+                                                <span class="bg-card text-emerald-400 text-[8px] px-0.5 rounded">▲▼</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1023,60 +1281,189 @@
                 title: "Билет 11: Трехуровневая клиент-серверная архитектура",
                 desc: "Выделенный сервер приложений для бизнес-логики и тонкий клиент",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚙️</span>
-                                Принцип трехзвенки
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Добавляется промежуточное звено — <a href="#" onclick="openTerm('сервер_приложений'); return false;" class="term-link text-gold underline hover:text-amber-400">Сервер приложений</a> (мониторы транзакций, бизнес-логика). Клиент становится «тонким» (отвечает только за интерфейс GUI).
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 11)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 11)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
+                            <button onclick="switchTheoryTab(this, 'physical', 11)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">🧱 Физическая структура</button>
                         </div>
 
-                        <!-- Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема трехуровневого клиент-сервера
-                            </h4>
-                            <div class="flex flex-col md:flex-row items-center justify-between gap-4 max-w-2xl mx-auto">
-                                <div class="w-full md:w-1/4 p-4 bg-blue-950/20 border border-blue-500/30 rounded-xl text-center">
-                                    <span class="text-[10px] text-blue-400 font-bold block">ТОНКИЙ КЛИЕНТ</span>
-                                    <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
-                                        Только интерфейс (GUI)<br>Нет СУБД и бизнес-правил
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚙️</span>
+                                    Принцип трехзвенки
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Добавляется промежуточное звено — <a href="#" onclick="openTerm('сервер_приложений'); return false;" class="term-link text-gold underline hover:text-amber-400">Сервер приложений</a> (мониторы транзакций, бизнес-логика). Клиент становится «тонким» (отвечает только за интерфейс GUI).
+                                </p>
+                            </div>
+
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема трехуровневого клиент-сервера
+                                </h4>
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-4 max-w-2xl mx-auto">
+                                    <div class="w-full md:w-1/4 p-4 bg-blue-950/20 border border-blue-500/30 rounded-xl text-center">
+                                        <span class="text-[10px] text-blue-400 font-bold block">ТОНКИЙ КЛИЕНТ</span>
+                                        <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
+                                            Только интерфейс (GUI)<br>Нет СУБД и бизнес-правил
+                                        </div>
+                                    </div>
+                                    <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← HTTP / RPC →</div>
+                                    <div class="w-full md:w-1/3 p-4 bg-purple-950/40 border border-purple-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-purple-400 font-bold block">СЕРВЕР ПРИЛОЖЕНИЙ</span>
+                                        <div class="mt-2 space-y-1 text-[9px] text-primary">
+                                            <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded font-bold">Бизнес-логика</div>
+                                            <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded">Монитор транзакций (TPM)</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← SQL →</div>
+                                    <div class="w-full md:w-1/4 p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
+                                        <span class="text-[10px] text-emerald-400 font-bold block">СЕРВЕР БАЗ ДАННЫХ</span>
+                                        <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
+                                            СУБД<br>Хранение и доступ к данным
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← HTTP / RPC →</div>
-
-                                <div class="w-full md:w-1/3 p-4 bg-purple-950/40 border border-purple-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-purple-400 font-bold block">СЕРВЕР ПРИЛОЖЕНИЙ</span>
-                                    <div class="mt-2 space-y-1 text-[9px] text-primary">
-                                        <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded font-bold">Бизнес-логика</div>
-                                        <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded">Монитор транзакций (TPM)</div>
-                                    </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
+                                    <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
+                                    <p class="mt-1 text-xs">Идеальная масштабируемость, минимальный трафик в сети, крайняя легкость обновления ПО (меняется только сервер приложений).</p>
                                 </div>
+                                <div class="bg-card p-4 rounded-xl border border-brandError/20">
+                                    <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
+                                    <p class="mt-1 text-xs">Высокая стоимость оборудования, сложность проектирования и администрирования трехзвенной среды.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← SQL →</div>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-purple-400 text-center">
+                                    Логическая структура трехзвенной архитектуры
+                                </h4>
+                                <div class="min-w-[650px] space-y-4 p-2">
+                                    <!-- Actors -->
+                                    <div class="grid grid-cols-12 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-3 text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 py-1.5 rounded-lg">Сервер приложений</div>
+                                        <div class="col-span-3 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 py-1.5 rounded-lg">Сервер БД</div>
+                                    </div>
 
-                                <div class="w-full md:w-1/4 p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
-                                    <span class="text-[10px] text-emerald-400 font-bold block">СЕРВЕР БАЗ ДАННЫХ</span>
-                                    <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
-                                        СУБД<br>Хранение и доступ к данным
+                                    <!-- Row 1: Слой представления -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[75px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-3 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center hover:border-indigo-400">
+                                            <span class="text-[10px] text-primary font-medium">Интерфейс клиента, вызов функций сервера приложений</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center">
+                                            <span class="text-xs text-primary font-medium">Интерфейс сервера</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 2: Слой бизнес-логики -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[75px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-2.5 bg-purple-950/20 border border-purple-500/30 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-purple-400">
+                                            <span class="text-[10px] text-purple-300 font-bold">Выполнение функций, формирование запросов к СУБД</span>
+                                            <!-- Connection with Client presentation -->
+                                            <div class="absolute -left-12 -top-8 z-10 w-16 h-8 flex items-center justify-center">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm rotate-[30deg]">◀▶</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 3: Слой доступа к данным -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[85px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-emerald-400">
+                                            <div class="space-y-1">
+                                                <div class="text-[9px] text-emerald-400 font-bold border-b border-emerald-500/20 pb-0.5">Хранимые процедуры</div>
+                                                <div class="text-[8px] text-primary">Выполнение запросов, обработка транзакций, хранение и управление данными</div>
+                                            </div>
+                                            <!-- Connection from Application server to DB access -->
+                                            <div class="absolute -left-12 -top-8 z-10 w-16 h-8 flex items-center justify-center">
+                                                <span class="text-purple-400 animate-pulse font-extrabold text-sm rotate-[30deg]">◀▶</span>
+                                            </div>
+                                            <!-- Internal Server DB arrow -->
+                                            <div class="absolute -top-[75px] left-1/2 -translate-x-1/2 z-10 h-[70px] border-l border-dashed border-emerald-500/50 flex items-center justify-center">
+                                                <span class="bg-card text-emerald-400 text-[8px] px-0.5 rounded">▲▼</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pros and Cons -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
-                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
-                                <p class="mt-1 text-xs">Идеальная масштабируемость, минимальный трафик в сети, крайняя легкость обновления ПО (меняется только сервер приложений).</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-brandError/20">
-                                <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
-                                <p class="mt-1 text-xs">Высокая стоимость оборудования, сложность проектирования и администрирования трехзвенной среды.</p>
+                        <!-- Tab 3: Physical Structure -->
+                        <div class="tab-panel tab-panel-physical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle text-center">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-purple-400">
+                                    Физическая структура трехзвенной архитектуры
+                                </h4>
+                                
+                                <div class="max-w-md mx-auto space-y-4 relative p-4 flex flex-col items-center">
+                                    <!-- Database server node (cylinder) -->
+                                    <div class="p-3 bg-gradient-to-r from-emerald-950/40 to-emerald-900/40 border border-emerald-500 rounded-2xl w-44 hover:scale-[1.03] transition-transform shadow flex items-center gap-3">
+                                        <div class="text-2xl">🛢️</div>
+                                        <div class="text-left">
+                                            <span class="text-[9px] text-emerald-400 font-extrabold uppercase tracking-widest block">Сервер БД</span>
+                                            <span class="text-xs text-primary font-bold">СУБД</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-indigo-400 animate-pulse text-xs">▲▼</div>
+
+                                    <!-- Application server node -->
+                                    <div class="p-3 bg-gradient-to-r from-purple-950/40 to-purple-900/40 border border-purple-500 rounded-2xl w-44 hover:scale-[1.03] transition-transform shadow flex items-center gap-3">
+                                        <div class="text-2xl">⚙️</div>
+                                        <div class="text-left">
+                                            <span class="text-[9px] text-purple-400 font-extrabold uppercase tracking-widest block">Сервер приложений</span>
+                                            <span class="text-xs text-primary font-bold">Бизнес-логика</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-indigo-400 animate-pulse text-xs">▲▼</div>
+
+                                    <!-- Network switch -->
+                                    <div class="px-4 py-2 bg-page border border-subtle rounded-xl text-xs font-bold text-primary flex items-center gap-2 hover:border-brandActive transition-colors shadow">
+                                        <span class="w-2 h-2 rounded-full bg-brandSuccess animate-pulse"></span>
+                                        Сетевое оборудование (LAN)
+                                    </div>
+
+                                    <div class="w-0.5 h-4 border-l-2 border-dashed border-subtle"></div>
+
+                                    <!-- Thin clients -->
+                                    <div class="grid grid-cols-5 gap-2 items-center w-full">
+                                        <div class="col-span-2 p-3 bg-blue-950/20 border border-blue-500/30 hover:border-blue-400 rounded-xl hover:scale-[1.03] transition-transform">
+                                            <span class="text-[9px] text-blue-400 font-extrabold block">Клиент 1</span>
+                                            <span class="text-[10px] text-primary">Тонкий клиент</span>
+                                        </div>
+                                        <div class="col-span-1 text-muted text-center font-bold text-lg">...</div>
+                                        <div class="col-span-2 p-3 bg-blue-950/20 border border-blue-500/30 hover:border-blue-400 rounded-xl hover:scale-[1.03] transition-transform">
+                                            <span class="text-[9px] text-blue-400 font-extrabold block">Клиент N</span>
+                                            <span class="text-[10px] text-primary">Тонкий клиент</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1086,61 +1473,137 @@
                 id: 12,
                 title: "Билет 12: Internet/intranet-архитектура",
                 desc: "Работа через веб-браузер, роль веб-сервера и CGI-шлюзов",
-                theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">🌐</span>
-                                Принцип Web-архитектуры
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Работа через стандартный Web-браузер. Данные отдает Web-сервер через <a href="#" onclick="openTerm('cgi_шлюз'); return false;" class="term-link text-gold underline hover:text-amber-400">CGI-шлюзы</a>, взаимодействуя с СУБД.
-                            </p>
+                                theoryHTML: `
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 12)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 12)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
                         </div>
 
-                        <!-- Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема Internet/intranet архитектуры
-                            </h4>
-                            <div class="flex flex-col md:flex-row items-center justify-between gap-4 max-w-2xl mx-auto">
-                                <div class="w-full md:w-1/4 p-4 bg-blue-950/20 border border-blue-500/30 rounded-xl text-center">
-                                    <span class="text-[10px] text-blue-400 font-bold block">WEB-БРАУЗЕР</span>
-                                    <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
-                                        Стандартный client<br>Интерпретирует HTML
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">🌐</span>
+                                    Принцип Web-архитектуры
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Работа через стандартный Web-браузер. Данные отдает Web-сервер через <a href="#" onclick="openTerm('cgi_шлюз'); return false;" class="term-link text-gold underline hover:text-amber-400">CGI-шлюзы</a>, взаимодействуя с СУБД.
+                                </p>
+                            </div>
+
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема Internet/intranet архитектуры
+                                </h4>
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-4 max-w-2xl mx-auto">
+                                    <div class="w-full md:w-1/4 p-4 bg-blue-950/20 border border-blue-500/30 rounded-xl text-center">
+                                        <span class="text-[10px] text-blue-400 font-bold block">WEB-БРАУЗЕР</span>
+                                        <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
+                                            Стандартный client<br>Интерпретирует HTML
+                                        </div>
+                                    </div>
+                                    <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← HTTP (HTML/CSS) →</div>
+                                    <div class="w-full md:w-1/3 p-4 bg-purple-950/40 border border-purple-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-purple-400 font-bold block">WEB-СЕРВЕР + CGI</span>
+                                        <div class="mt-2 space-y-1 text-[9px] text-primary">
+                                            <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded font-bold">CGI-шлюзы (Скрипты)</div>
+                                            <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded">Обработка HTTP запросов</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← SQL/Запросы →</div>
+                                    <div class="w-full md:w-1/4 p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
+                                        <span class="text-[10px] text-emerald-400 font-bold block">СЕРВЕР БД (СУБД)</span>
+                                        <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
+                                            Хранение данных<br>Выборка по запросам
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← HTTP (HTML/CSS) →</div>
-
-                                <div class="w-full md:w-1/3 p-4 bg-purple-950/40 border border-purple-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-purple-400 font-bold block">WEB-СЕРВЕР + CGI</span>
-                                    <div class="mt-2 space-y-1 text-[9px] text-primary">
-                                        <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded font-bold">CGI-шлюзы (Скрипты)</div>
-                                        <div class="p-1 bg-purple-900/40 border border-purple-500/20 rounded">Обработка HTTP запросов</div>
-                                    </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
+                                    <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
+                                    <p class="mt-1 text-xs">Кроссплатформенность, простота интерфейса, полное отсутствие установки специального ПО на компьютер пользователя.</p>
                                 </div>
-
-                                <div class="text-center font-bold text-indigo-500 animate-pulse text-xs">← SQL/Запросы →</div>
-
-                                <div class="w-full md:w-1/4 p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
-                                    <span class="text-[10px] text-emerald-400 font-bold block">СЕРВЕР БД (СУБД)</span>
-                                    <div class="mt-2 text-[9px] text-primary bg-card p-1.5 rounded">
-                                        Хранение данных<br>Выборка по запросам
-                                    </div>
+                                <div class="bg-card p-4 rounded-xl border border-brandError/20">
+                                    <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
+                                    <p class="mt-1 text-xs">Ограниченный (только гипертекстовый) интерфейс, отсутствие возможности локальной обработки данных на клиенте.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pros and Cons -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
-                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
-                                <p class="mt-1 text-xs">Кроссплатформенность, простота интерфейса, полное отсутствие установки специального ПО на компьютер пользователя.</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-brandError/20">
-                                <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Минусы</h5>
-                                <p class="mt-1 text-xs">Ограниченный (только гипертекстовый) интерфейс, отсутствие возможности локальной обработки данных на клиенте.</p>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-indigo-400 text-center">
+                                    Логическая структура Internet/Intranet архитектуры
+                                </h4>
+                                <div class="min-w-[650px] space-y-4 p-2">
+                                    <!-- Grid Headers -->
+                                    <div class="grid grid-cols-12 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-3 text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 py-1.5 rounded-lg">Web-сервер</div>
+                                        <div class="col-span-3 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 py-1.5 rounded-lg">Сервер БД</div>
+                                    </div>
+
+                                    <!-- Row 1: Слой представления -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[70px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center hover:border-indigo-400">
+                                            <span class="text-xs text-primary font-medium">Стандартный Web-браузер</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-3 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center">
+                                            <span class="text-xs text-primary font-medium">Интерфейс сервера</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 2: Слой бизнес-логики -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[70px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-3 bg-purple-950/20 border border-purple-500/30 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-purple-400">
+                                            <span class="text-xs text-purple-300 font-bold">CGI-шлюзы (вызов программ обработки данных)</span>
+                                            <!-- Connection between Browser and CGI via HTTP -->
+                                            <div class="absolute -left-12 -top-[30px] z-10 w-16 h-8 flex items-center justify-center">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm rotate-[15deg]">◀▶</span>
+                                                <span class="absolute top-0 text-[7px] text-indigo-400 font-mono">HTTP</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 3: Слой доступа к данным -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[80px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-emerald-400">
+                                            <div class="space-y-1">
+                                                <div class="text-[9px] text-emerald-400 font-bold border-b border-emerald-500/20 pb-0.5">Хранимые процедуры</div>
+                                                <div class="text-[8px] text-primary">Выполнение запросов, обработка транзакций, хранение и управление данными</div>
+                                            </div>
+                                            <!-- Connection between CGI and DB Server Access layer -->
+                                            <div class="absolute -left-12 -top-[30px] z-10 w-16 h-8 flex items-center justify-center">
+                                                <span class="text-purple-400 animate-pulse font-extrabold text-sm rotate-[15deg]">◀▶</span>
+                                                <span class="absolute top-0 text-[7px] text-purple-400 font-mono">SQL</span>
+                                            </div>
+                                            <!-- Internal Server DB arrow -->
+                                            <div class="absolute -top-[70px] left-1/2 -translate-x-1/2 z-10 h-[65px] border-l border-dashed border-emerald-500/50 flex items-center justify-center">
+                                                <span class="bg-card text-emerald-400 text-[8px] px-0.5 rounded">▲▼</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1151,56 +1614,136 @@
                 title: "Билет 13: Internet/intranet-архитектура с мигрирующими программами",
                 desc: "Временный запуск апплетов Java, скриптов JS и ActiveX на клиенте, связь через JDBC/ODBC",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚡</span>
-                                Мигрирующие программы
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Для сложной логики сервер присылает клиенту в браузер небольшой кусок кода — <a href="#" onclick="openTerm('java_апплет'); return false;" class="term-link text-gold underline hover:text-amber-400">Java-апплет</a> (или ActiveX / JS-скрипт), который временно запускается на ПК клиента.
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 13)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 13)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
                         </div>
 
-                        <!-- Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема работы мигрирующих программ
-                            </h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
-                                <div class="p-4 bg-page/60 border border-subtle rounded-xl text-center">
-                                    <span class="text-[10px] text-muted font-bold block">WEB-СЕРВЕР</span>
-                                    <span class="font-extrabold text-primary text-xs">Хранилище кода</span>
-                                    <div class="mt-2 text-[9px] text-indigo-400 font-mono bg-card p-1.5 rounded border border-subtle">
-                                        [applet.class]<br>[script.js]
-                                    </div>
-                                </div>
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">⚡</span>
+                                    Мигрирующие программы
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Для сложной логики сервер присылает клиенту в браузер небольшой кусок кода — <a href="#" onclick="openTerm('java_апплет'); return false;" class="term-link text-gold underline hover:text-amber-400">Java-апплет</a> (или ActiveX / JS-скрипт), который временно запускается на ПК клиента.
+                                </p>
+                            </div>
 
-                                <div class="flex flex-col items-center text-center">
-                                    <span class="text-indigo-400 font-bold text-[9px] animate-bounce">Скачивание кода ↓</span>
-                                    <div class="w-full bg-brandActive/20 border border-brandActive/30 h-2 rounded my-1 relative overflow-hidden">
-                                        <div class="absolute inset-y-0 left-0 bg-brandActive w-1/2 animate-[ping_1.5s_infinite]"></div>
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема работы мигрирующих программ
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center max-w-2xl mx-auto">
+                                    <div class="p-4 bg-page/60 border border-subtle rounded-xl text-center">
+                                        <span class="text-[10px] text-muted font-bold block">WEB-СЕРВЕР</span>
+                                        <span class="font-extrabold text-primary text-xs">Хранилище кода</span>
+                                        <div class="mt-2 text-[9px] text-indigo-400 font-mono bg-card p-1.5 rounded border border-subtle">
+                                            [applet.class]<br>[script.js]
+                                        </div>
                                     </div>
-                                    <span class="text-emerald-400 font-bold text-[9px]">Прямой доступ к БД через <a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a>/<a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a> →</span>
-                                </div>
-
-                                <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
-                                    <span class="text-[10px] text-indigo-400 font-bold block">БРАУЗЕР КЛИЕНТА</span>
-                                    <div class="mt-2 space-y-1 text-[9px] text-primary">
-                                        <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded font-bold">Запуск Апплета/JS</div>
-                                        <div class="p-1 bg-emerald-900/40 border border-emerald-500/20 rounded text-emerald-300 font-semibold"><a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a>/<a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a> Драйвер</div>
+                                    <div class="flex flex-col items-center text-center">
+                                        <span class="text-indigo-400 font-bold text-[9px] animate-bounce">Скачивание кода ↓</span>
+                                        <div class="w-full bg-brandActive/20 border border-brandActive/30 h-2 rounded my-1 relative overflow-hidden">
+                                            <div class="absolute inset-y-0 left-0 bg-brandActive w-1/2 animate-[ping_1.5s_infinite]"></div>
+                                        </div>
+                                        <span class="text-emerald-400 font-bold text-[9px]">Прямой доступ к БД через <a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a>/<a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a> →</span>
+                                    </div>
+                                    <div class="p-4 bg-indigo-950/40 border border-indigo-500/40 rounded-xl text-center">
+                                        <span class="text-[10px] text-indigo-400 font-bold block">БРАУЗЕР КЛИЕНТА</span>
+                                        <div class="mt-2 space-y-1 text-[9px] text-primary">
+                                            <div class="p-1 bg-indigo-900/40 border border-indigo-500/20 rounded font-bold">Запуск Апплета/JS</div>
+                                            <div class="p-1 bg-emerald-900/40 border border-emerald-500/20 rounded text-emerald-300 font-semibold"><a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a>/<a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a> Драйвер</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider text-emerald-500">
+                                    Взаимодействие с базой данных
+                                </h4>
+                                <p class="mt-2 text-xs md:text-sm">
+                                    Для связи загруженного и исполняемого на стороне клиента апплета с базой данных используются универсальные программные интерфейсы <strong><a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a></strong> или <strong><a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a></strong>.
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider text-emerald-500">
-                                Взаимодействие с базой данных
-                            </h4>
-                            <p class="mt-2 text-xs md:text-sm">
-                                Для связи загруженного и исполняемого на стороне клиента апплета с базой данных используются универсальные программные интерфейсы <strong><a href="#" onclick="openTerm('jdbc'); return false;" class="term-link text-gold underline hover:text-amber-400">JDBC</a></strong> или <strong><a href="#" onclick="openTerm('odbc'); return false;" class="term-link text-gold underline hover:text-amber-400">ODBC</a></strong>.
-                            </p>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-amber-500 text-center">
+                                    Логическая структура с мигрирующими программами
+                                </h4>
+                                <div class="min-w-[650px] space-y-4 p-2">
+                                    <!-- Actors -->
+                                    <div class="grid grid-cols-12 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg">Клиент</div>
+                                        <div class="col-span-3 text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 py-1.5 rounded-lg">Web-сервер</div>
+                                        <div class="col-span-3 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 py-1.5 rounded-lg">Сервер БД</div>
+                                    </div>
+
+                                    <!-- Row 1: Слой представления -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[75px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-3 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center hover:border-indigo-400">
+                                            <span class="text-xs text-primary font-medium">Браузер с виртуальной машиной (JVM)</span>
+                                        </div>
+                                        <div class="col-span-3 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center">
+                                            <span class="text-xs text-primary font-medium">Web-сервер</span>
+                                            <!-- Connection from Client Presentation to Web-Server Presentation -->
+                                            <div class="absolute -left-6 top-1/2 -translate-y-1/2 z-10">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm">◀▶</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 2: Слой бизнес-логики -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[85px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-3 p-2.5 bg-indigo-950/20 border border-indigo-500/20 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-indigo-400">
+                                            <span class="text-xs text-indigo-300 font-bold">Загруженная мигрирующая программа (апплет, ActiveX)</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[8px] text-indigo-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-3 p-2.5 bg-purple-950/20 border border-purple-500/20 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-purple-400">
+                                            <span class="text-xs text-purple-300 font-bold">Библиотека мигрирующих программ (апплетов, ActiveX элементов)</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 text-[8px] text-purple-400">▲▼</div>
+                                            <!-- Download connection from Web Server Business Logic library to Client applet storage -->
+                                            <div class="absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-16 h-4 flex items-center justify-center">
+                                                <span class="text-indigo-400 animate-pulse font-extrabold text-sm">◀</span>
+                                                <span class="absolute top-[-10px] text-[7px] text-indigo-400 font-mono">Загрузка</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                    </div>
+
+                                    <!-- Row 3: Слой доступа к данным -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[85px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-3 p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center h-full flex flex-col justify-center relative hover:border-emerald-400">
+                                            <span class="text-[10px] text-emerald-300 font-bold">Выполнение запросов, обработка транзакций, хранение и управление базой данных</span>
+                                            <!-- Direct JDBC/ODBC connection from Client applet to DB access layer -->
+                                            <div class="absolute -left-48 top-1/2 -translate-y-1/2 z-10 w-52 h-4 flex items-center justify-center">
+                                                <span class="text-emerald-400 animate-pulse font-extrabold text-sm">◀▶</span>
+                                                <span class="absolute top-[-10px] text-[7px] text-emerald-400 font-mono">JDBC / ODBC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `
@@ -1210,70 +1753,147 @@
                 title: "Билет 14: SAN-архитектура (Storage Area Network)",
                 desc: "Оптическая сеть Fibre Channel для блочного доступа к LUN и LAN-free резервное копирование",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">💾</span>
-                                Принцип SAN
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Сеть хранения данных (SAN) — это отдельная скоростная подсеть (часто Fibre Channel), которая соединяет серверы напрямую с устройствами хранения дисков на блочном уровне.
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 14)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 14)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Сетевая структура SAN</button>
                         </div>
 
-                        <!-- Visual Diagram -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема архитектуры SAN
-                            </h4>
-                            <div class="flex flex-col space-y-3 max-w-xl mx-auto">
-                                <div class="p-2 bg-page/40 border border-subtle rounded-lg text-center text-xs">
-                                    Локальная сеть (LAN Ethernet) / Клиентские ПК
-                                </div>
-                                <div class="flex justify-center text-muted text-xs">↓ (Обычные сетевые запросы)</div>
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">💾</span>
+                                    Принцип SAN
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Сеть хранения данных (SAN) — это отдельная скоростная подсеть (часто Fibre Channel), которая соединяет серверы напрямую с устройствами хранения дисков на блочном уровне.
+                                </p>
+                            </div>
 
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="p-3 bg-indigo-950/30 border border-indigo-500/30 rounded-xl text-center text-xs">
-                                        <span class="font-bold text-primary block">Сервер приложений 1</span>
-                                        [HBA Адаптер]
+                            <!-- Visual Diagram -->
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема архитектуры SAN
+                                </h4>
+                                <div class="flex flex-col space-y-3 max-w-xl mx-auto">
+                                    <div class="p-2 bg-page/40 border border-subtle rounded-lg text-center text-xs">
+                                        Локальная сеть (LAN Ethernet) / Клиентские ПК
                                     </div>
-                                    <div class="p-3 bg-indigo-950/30 border border-indigo-500/30 rounded-xl text-center text-xs">
-                                        <span class="font-bold text-primary block">Сервер приложений 2</span>
-                                        [HBA Адаптер]
-                                    </div>
-                                </div>
-                                <div class="flex justify-center text-indigo-400 text-xs animate-pulse">↓ ↓ (Fibre Channel Optic)</div>
+                                    <div class="flex justify-center text-muted text-xs">↓ (Обычные сетевые запросы)</div>
 
-                                <div class="p-3 bg-purple-900/40 border border-purple-500/40 rounded-xl text-center text-xs font-bold text-primary">
-                                    ФИБРОВОЛОКОННЫЙ КОММУТАТОР (FC Switch / Fabric)
-                                </div>
-                                <div class="flex justify-center text-indigo-400 text-xs animate-pulse">↓ ↓ (Блочный уровень / LUN)</div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="p-3 bg-indigo-950/30 border border-indigo-500/30 rounded-xl text-center text-xs">
+                                            <span class="font-bold text-primary block">Сервер приложений 1</span>
+                                            [HBA Адаптер]
+                                        </div>
+                                        <div class="p-3 bg-indigo-950/30 border border-indigo-500/30 rounded-xl text-center text-xs">
+                                            <span class="font-bold text-primary block">Сервер приложений 2</span>
+                                            [HBA Адаптер]
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center text-indigo-400 text-xs animate-pulse">↓ ↓ (Fibre Channel Optic)</div>
 
-                                <div class="grid grid-cols-3 gap-2">
-                                    <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
-                                        <span class="font-bold text-emerald-400 block">Дисковый массив 1</span>
-                                        [LUN 0]
+                                    <div class="p-3 bg-purple-900/40 border border-purple-500/40 rounded-xl text-center text-xs font-bold text-primary">
+                                        ФИБРОВОЛОКОННЫЙ КОММУТАТОР (FC Switch / Fabric)
                                     </div>
-                                    <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
-                                        <span class="font-bold text-emerald-400 block">Дисковый массив 2</span>
-                                        [LUN 1]
-                                    </div>
-                                    <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
-                                        <span class="font-bold text-emerald-400 block">Ленточный бэкап</span>
-                                        [LAN-free backup]
+                                    <div class="flex justify-center text-indigo-400 text-xs animate-pulse">↓ ↓ (Блочный уровень / LUN)</div>
+
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
+                                            <span class="font-bold text-emerald-400 block">Дисковый массив 1</span>
+                                            [LUN 0]
+                                        </div>
+                                        <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
+                                            <span class="font-bold text-emerald-400 block">Дисковый массив 2</span>
+                                            [LUN 1]
+                                        </div>
+                                        <div class="p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-lg text-center text-[10px]">
+                                            <span class="font-bold text-emerald-400 block">Ленточный бэкап</span>
+                                            [LAN-free backup]
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Features -->
+                            <div class="bg-card p-5 rounded-2xl border border-emerald-500/20">
+                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы SAN</h5>
+                                <ul class="list-disc pl-5 mt-2 space-y-1 text-xs">
+                                    <li>Обмен данными дисков без участия серверов локальной сети (разгрузка LAN).</li>
+                                    <li>Виртуализация ресурсов хранения данных.</li>
+                                    <li>Идеальные условия для быстрого <a href="#" onclick="openTerm('бэкап'); return false;" class="term-link text-gold underline hover:text-amber-400">резервного копирования</a> и удаленного <a href="#" onclick="openTerm('зеркалирование'); return false;" class="term-link text-gold underline hover:text-amber-400">зеркалирования</a>.</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <!-- Features -->
-                        <div class="bg-card p-5 rounded-2xl border border-emerald-500/20">
-                            <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы SAN</h5>
-                            <ul class="list-disc pl-5 mt-2 space-y-1 text-xs">
-                                <li>Обмен данными дисков без участия серверов локальной сети (разгрузка LAN).</li>
-                                <li>Виртуализация ресурсов хранения данных.</li>
-                                <li>Идеальные условия для быстрого <a href="#" onclick="openTerm('бэкап'); return false;" class="term-link text-gold underline hover:text-amber-400">резервного копирования</a> и удаленного <a href="#" onclick="openTerm('зеркалирование'); return false;" class="term-link text-gold underline hover:text-amber-400">зеркалирования</a>.</li>
-                            </ul>
+                        <!-- Tab 2: Network structure SAN -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-purple-400 text-center">
+                                    Физическое разделение сетей в архитектуре SAN (Слайд)
+                                </h4>
+                                <div class="min-w-[500px] space-y-6 max-w-lg mx-auto relative p-2">
+                                    <!-- Clients and LAN -->
+                                    <div class="p-3 bg-page border border-subtle rounded-xl text-center">
+                                        <div class="text-[10px] text-muted uppercase font-bold mb-1">Общая ЛВС (LAN Ethernet)</div>
+                                        <div class="flex justify-center gap-4 text-xs text-primary font-bold">
+                                            <span>💻 Клиент 1</span>
+                                            <span>💻 Клиент 2</span>
+                                            <span>💻 Клиент N</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Arrows down to Servers -->
+                                    <div class="flex justify-center text-muted text-xs">▼ ▼ ▼</div>
+
+                                    <!-- Servers with double interfaces (LAN + FC) -->
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="p-3 bg-indigo-950/20 border border-indigo-500/30 rounded-xl relative hover:border-indigo-400">
+                                            <div class="text-[9px] text-indigo-400 font-extrabold uppercase mb-1">Сервер 1</div>
+                                            <div class="space-y-1 text-[10px]">
+                                                <div class="bg-indigo-900/30 p-1 rounded">Ethernet NIC (подкл. к LAN)</div>
+                                                <div class="bg-purple-900/30 p-1 rounded font-bold border border-purple-500/20">Fibre Channel HBA</div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-indigo-950/20 border border-indigo-500/30 rounded-xl relative hover:border-indigo-400">
+                                            <div class="text-[9px] text-indigo-400 font-extrabold uppercase mb-1">Сервер 2</div>
+                                            <div class="space-y-1 text-[10px]">
+                                                <div class="bg-indigo-900/30 p-1 rounded">Ethernet NIC (подкл. к LAN)</div>
+                                                <div class="bg-purple-900/30 p-1 rounded font-bold border border-purple-500/20">Fibre Channel HBA</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Arrow from HBA to FC switch -->
+                                    <div class="flex justify-center text-purple-400 font-bold text-xs animate-pulse">▼ ▼ (Выделенная сеть хранения)</div>
+
+                                    <!-- FC Switch -->
+                                    <div class="p-3 bg-gradient-to-r from-purple-950/60 to-purple-900/60 border border-purple-500 rounded-xl text-center">
+                                        <span class="text-[9px] text-purple-400 font-extrabold uppercase tracking-widest block mb-0.5">Fibre Channel Switch</span>
+                                        <span class="text-xs text-primary font-bold">Оптический коммутатор (Fabric)</span>
+                                    </div>
+
+                                    <div class="flex justify-center text-purple-400 font-bold text-xs animate-pulse">▼ ▼ (Блочный протокол SCSI/FC)</div>
+
+                                    <!-- Storage Devices -->
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="p-2 bg-emerald-950/30 border border-emerald-500/30 rounded-xl text-center">
+                                            <span class="text-[10px] text-emerald-400 font-bold block">🗄️ СХД A</span>
+                                            <span class="text-[8px] text-primary">Диски (LUN 1)</span>
+                                        </div>
+                                        <div class="p-2 bg-emerald-950/30 border border-emerald-500/30 rounded-xl text-center">
+                                            <span class="text-[10px] text-emerald-400 font-bold block">🗄️ СХД B</span>
+                                            <span class="text-[8px] text-primary">Диски (LUN 2)</span>
+                                        </div>
+                                        <div class="p-2 bg-emerald-950/30 border border-emerald-500/30 rounded-xl text-center">
+                                            <span class="text-[10px] text-amber-500 font-bold block">📼 Tape Library</span>
+                                            <span class="text-[8px] text-primary">Ленточный бэкап</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `
@@ -1283,57 +1903,106 @@
                 title: "Билет 15: NAS-архитектура (Network Attached Storage)",
                 desc: "Сетевой накопитель, файловый доступ по SMB/NFS через LAN Ethernet",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">📁</span>
-                                Принцип NAS
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Сетевое хранилище данных (NAS) — это специализированный сервер со своей ОС, который подключается напрямую к обычной локальной сети компании (LAN).
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 15)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 15)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Сетевая структура NAS</button>
                         </div>
 
-                        <!-- Visual Diagram -->
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
-                                Схема архитектуры NAS
-                            </h4>
-                            <div class="flex flex-col space-y-3 max-w-xl mx-auto">
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="p-3 bg-page/40 border border-subtle rounded-xl text-center text-xs">
-                                        Клиентские ПК (Пользователи)
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandActive/20 text-brandActive rounded-lg">📁</span>
+                                    Принцип NAS
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Сетевое хранилище данных (NAS) — это специализированный сервер со своей ОС, который подключается напрямую к обычной локальной сети компании (LAN).
+                                </p>
+                            </div>
+
+                            <!-- Visual Diagram -->
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-4 text-indigo-400">
+                                    Схема архитектуры NAS
+                                </h4>
+                                <div class="flex flex-col space-y-3 max-w-xl mx-auto">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="p-3 bg-page/40 border border-subtle rounded-xl text-center text-xs">
+                                            Клиентские ПК (Пользователи)
+                                        </div>
+                                        <div class="p-3 bg-page/40 border border-subtle rounded-xl text-center text-xs">
+                                            Серверы приложений
+                                        </div>
                                     </div>
-                                    <div class="p-3 bg-page/40 border border-subtle rounded-xl text-center text-xs">
-                                        Серверы приложений
+
+                                    <div class="flex justify-center text-muted text-xs">↓ ↓</div>
+                                    <div class="p-3 bg-blue-900/40 border border-blue-500/40 rounded-xl text-center text-xs font-bold text-primary">
+                                        ЛОКАЛЬНАЯ СЕТЬ КОМПАНИИ (LAN Ethernet Switch)
+                                    </div>
+                                    <div class="flex justify-center text-muted text-xs">↑ (Файловый уровень / <a href="#" onclick="openTerm('nfs'); return false;" class="term-link text-gold underline hover:text-amber-400">NFS</a>, <a href="#" onclick="openTerm('smb'); return false;" class="term-link text-gold underline hover:text-amber-400">SMB</a>)</div>
+
+                                    <div class="p-4 bg-emerald-950/30 border border-emerald-500/40 rounded-xl text-center max-w-xs mx-auto w-full">
+                                        <span class="text-[10px] text-emerald-400 font-bold block">NAS (Сетевой накопитель)</span>
+                                        <span class="font-extrabold text-primary text-xs">Автономный сервер со своей ОС</span>
+                                        <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-emerald-500/20">
+                                            Общие папки и файлы: \\\\nas-server\\shared
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="flex justify-center text-muted text-xs">↓ ↓</div>
-                                <div class="p-3 bg-blue-900/40 border border-blue-500/40 rounded-xl text-center text-xs font-bold text-primary">
-                                    ЛОКАЛЬНАЯ СЕТЬ КОМПАНИИ (LAN Ethernet Switch)
+                            <!-- Features -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-subtle">
+                                    <h5 class="text-indigo-400 font-bold text-xs uppercase tracking-wider">Особенность</h5>
+                                    <p class="mt-1 text-xs">Доступ осуществляется строго на <strong>файловом уровне</strong> по сетевым протоколам.</p>
                                 </div>
-                                <div class="flex justify-center text-muted text-xs">↑ (Файловый уровень / <a href="#" onclick="openTerm('nfs'); return false;" class="term-link text-gold underline hover:text-amber-400">NFS</a>, <a href="#" onclick="openTerm('smb'); return false;" class="term-link text-gold underline hover:text-amber-400">SMB</a>)</div>
-
-                                <div class="p-4 bg-emerald-950/30 border border-emerald-500/40 rounded-xl text-center max-w-xs mx-auto w-full">
-                                    <span class="text-[10px] text-emerald-400 font-bold block">NAS (Сетевой накопитель)</span>
-                                    <span class="font-extrabold text-primary text-xs">Автономный сервер со своей ОС</span>
-                                    <div class="mt-2 text-[9px] text-muted bg-card p-1.5 rounded border border-emerald-500/20">
-                                        Общие папки и файлы: \\\\nas-server\\shared
-                                    </div>
+                                <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
+                                    <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
+                                    <p class="mt-1 text-xs">Простая установка и администрирование, высокая скорость доступа к файлам в рамках ЛВС.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Features -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-subtle">
-                                <h5 class="text-indigo-400 font-bold text-xs uppercase tracking-wider">Особенность</h5>
-                                <p class="mt-1 text-xs">Доступ осуществляется строго на <strong>файловом уровне</strong> по сетевым протоколам.</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-emerald-500/20">
-                                <h5 class="text-brandSuccess font-bold text-xs uppercase tracking-wider">Плюсы</h5>
-                                <p class="mt-1 text-xs">Простая установка и администрирование, высокая скорость доступа к файлам в рамках ЛВС.</p>
+                        <!-- Tab 2: Network structure NAS -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle overflow-x-auto">
+                                <h4 class="text-primary font-bold text-sm uppercase tracking-wider mb-6 text-emerald-400 text-center">
+                                    Общая физическая сеть в архитектуре NAS (Слайд)
+                                </h4>
+                                <div class="min-w-[450px] space-y-4 max-w-md mx-auto relative p-2 flex flex-col items-center">
+                                    <!-- Clients & Application Servers -->
+                                    <div class="grid grid-cols-3 gap-2 w-full">
+                                        <div class="p-2.5 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-[9px] text-muted block">💻 Клиент</span>
+                                        </div>
+                                        <div class="p-2.5 bg-indigo-950/20 border border-indigo-500/20 rounded-xl text-center">
+                                            <span class="text-[9px] text-indigo-400 font-bold block">🖥️ Сервер 1</span>
+                                        </div>
+                                        <div class="p-2.5 bg-page border border-subtle rounded-xl text-center">
+                                            <span class="text-[9px] text-muted block">💻 Клиент N</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-muted text-xs">▼ ▼ ▼</div>
+
+                                    <!-- Common LAN Switch -->
+                                    <div class="p-3 bg-blue-900/30 border border-blue-500 rounded-xl text-center w-full">
+                                        <span class="text-[9px] text-blue-400 font-extrabold uppercase tracking-widest block mb-0.5">Ethernet Switch</span>
+                                        <span class="text-xs text-primary font-bold">Общая локальная сеть предприятия (LAN)</span>
+                                    </div>
+
+                                    <div class="text-emerald-400 text-xs animate-pulse">▲▲ (Файловые протоколы NFS / SMB)</div>
+
+                                    <!-- NAS Storage Node -->
+                                    <div class="p-4 bg-gradient-to-r from-emerald-950/40 to-emerald-900/40 border border-emerald-500 rounded-2xl w-56 text-center shadow hover:scale-[1.03] transition-transform">
+                                        <span class="text-[9px] text-emerald-400 font-extrabold uppercase tracking-widest block mb-1">NAS устройство</span>
+                                        <span class="text-xs text-primary font-bold block">Файловый сервер хранения</span>
+                                        <span class="text-[9px] text-muted block mt-1">(Файловая система управляется самим NAS)</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1344,75 +2013,151 @@
                 title: "Билет 16: Титановая архитектура",
                 desc: "Промышленная отказоустойчивость, 100% дублирование, изолированные Зоны А и Б",
                 theoryHTML: `
-                    <div class="space-y-6 text-muted leading-relaxed text-sm md:text-base">
-                        <div class="bg-card p-5 rounded-2xl border border-subtle">
-                            <h4 class="text-primary font-bold text-base flex items-center gap-2">
-                                <span class="p-1 bg-brandError/20 text-brandError rounded-lg">⚡</span>
-                                Принцип Титановой архитектуры
-                            </h4>
-                            <p class="mt-2 text-primary font-semibold text-sm">
-                                Титановая архитектура — промышленная отказоустойчивая архитектура, связывающая серверы со станками и оборудованием. Главное правило — <strong>100% дублирование всех компонентов</strong>.
-                            </p>
+                    <div class="theory-content-wrapper space-y-6">
+                        <!-- Tab Controls -->
+                        <div class="flex border-b border-subtle mb-4 overflow-x-auto pb-1 gap-2">
+                            <button onclick="switchTheoryTab(this, 'text', 16)" class="tab-btn px-4 py-2 text-xs md:text-sm font-bold border-b-2 border-brandActive text-primary active shrink-0">📖 Теория</button>
+                            <button onclick="switchTheoryTab(this, 'logical', 16)" class="tab-btn px-4 py-2 text-xs md:text-sm font-semibold text-muted hover:text-primary shrink-0">📐 Логическая структура</button>
                         </div>
 
-                        <!-- Stunning Visual Schema -->
-                        <div class="bg-card p-5 rounded-2xl border border-brandError/30 shadow-lg">
-                            <h4 class="text-brandError font-bold text-sm uppercase tracking-wider mb-4 text-center">
-                                Схема промышленной Титановой архитектуры
-                            </h4>
-                            
-                            <div class="space-y-4 max-w-2xl mx-auto">
-                                <div class="text-center">
-                                    <span class="text-[10px] text-muted uppercase block">Входной трафик от оборудования</span>
-                                    <a href="#" onclick="openTerm('балансировщик_нагрузки'); return false;" class="inline-block p-3 bg-red-950/40 hover:bg-red-900/40 border border-brandError rounded-xl mt-1 text-xs text-gold underline transition-all">
-                                        🛡️ ВХОДНОЙ БАЛАНСИРОВЩИК / МАРШРУТИЗАТОР
-                                    </a>
-                                </div>
+                        <!-- Tab 1: Text -->
+                        <div class="tab-panel tab-panel-text space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-subtle">
+                                <h4 class="text-primary font-bold text-base flex items-center gap-2">
+                                    <span class="p-1 bg-brandError/20 text-brandError rounded-lg">⚡</span>
+                                    Принцип Титановой архитектуры
+                                </h4>
+                                <p class="mt-2 text-primary font-semibold text-sm">
+                                    Титановая архитектура — промышленная отказоустойчивая архитектура, связывающая серверы со станками и оборудованием. Главное правило — <strong>100% дублирование всех компонентов</strong>.
+                                </p>
+                            </div>
 
-                                <div class="flex justify-around text-brandError font-bold text-xs">
-                                    <span>↙ (Канал А)</span>
-                                    <span>(Синхронный режим)</span>
-                                    <span>(Канал Б) ↘</span>
-                                </div>
+                            <!-- Stunning Visual Schema -->
+                            <div class="bg-card p-5 rounded-2xl border border-brandError/30 shadow-lg">
+                                <h4 class="text-brandError font-bold text-sm uppercase tracking-wider mb-4 text-center">
+                                    Схема промышленной Титановой архитектуры
+                                </h4>
+                                
+                                <div class="space-y-4 max-w-2xl mx-auto">
+                                    <div class="text-center">
+                                        <span class="text-[10px] text-muted uppercase block">Входной трафик от оборудования</span>
+                                        <a href="#" onclick="openTerm('балансировщик_нагрузки'); return false;" class="inline-block p-3 bg-red-950/40 hover:bg-red-900/40 border border-brandError rounded-xl mt-1 text-xs text-gold underline transition-all">
+                                            🛡️ ВХОДНОЙ БАЛАНСИРОВЩИК / МАРШРУТИЗАТОР
+                                        </a>
+                                    </div>
 
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="p-4 bg-gradient-to-b from-card to-red-950/20 border border-brandError/40 rounded-2xl text-center">
-                                        <span class="p-1 bg-brandError/20 text-brandError text-[9px] font-bold rounded uppercase tracking-wider block mb-2">Изолированная Зона А</span>
-                                        <div class="space-y-1.5 text-xs">
-                                            <div class="p-2 bg-page/50 border border-subtle rounded text-primary">Физический сервер 1 (Логика)</div>
-                                            <div class="p-2 bg-red-900/20 border border-brandError/30 rounded text-brandError font-bold">СУБД Мастер (Master)</div>
+                                    <div class="flex justify-around text-brandError font-bold text-xs">
+                                        <span>↙ (Канал А)</span>
+                                        <span>(Синхронный режим)</span>
+                                        <span>(Канал Б) ↘</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="p-4 bg-gradient-to-b from-card to-red-950/20 border border-brandError/40 rounded-2xl text-center">
+                                            <span class="p-1 bg-brandError/20 text-brandError text-[9px] font-bold rounded uppercase tracking-wider block mb-2">Изолированная Зона А</span>
+                                            <div class="space-y-1.5 text-xs">
+                                                <div class="p-2 bg-page/50 border border-subtle rounded text-primary">Физический сервер 1 (Логика)</div>
+                                                <div class="p-2 bg-red-900/20 border border-brandError/30 rounded text-brandError font-bold">СУБД Мастер (Master)</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-4 bg-gradient-to-b from-card to-red-950/20 border border-brandError/40 rounded-2xl text-center">
+                                            <span class="p-1 bg-brandError/20 text-brandError text-[9px] font-bold rounded uppercase tracking-wider block mb-2">Изолированная Зона Б</span>
+                                            <div class="space-y-1.5 text-xs">
+                                                <div class="p-2 bg-page/50 border border-subtle rounded text-primary">Блейд-сервер 2 (Резерв логики)</div>
+                                                <div class="p-2 bg-red-900/20 border border-brandError/30 rounded text-brandError font-bold">СУБД Реплика (Replica)</div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="p-4 bg-gradient-to-b from-card to-red-950/20 border border-brandError/40 rounded-2xl text-center">
-                                        <span class="p-1 bg-brandError/20 text-brandError text-[9px] font-bold rounded uppercase tracking-wider block mb-2">Изолированная Зона Б</span>
-                                        <div class="space-y-1.5 text-xs">
-                                            <div class="p-2 bg-page/50 border border-subtle rounded text-primary">Блейд-сервер 2 (Резерв логики)</div>
-                                            <div class="p-2 bg-red-900/20 border border-brandError/30 rounded text-brandError font-bold">СУБД Реплика (Replica)</div>
-                                        </div>
+                                    <div class="flex justify-center text-[10px] text-muted text-center">
+                                        双 Двойной независимый канал связи
+                                    </div>
+
+                                    <div class="p-4 bg-page/60 border border-brandError rounded-xl text-center">
+                                        <span class="text-[10px] text-brandError font-bold uppercase tracking-wider block">Отказоустойчивое хранилище SAN/NAS</span>
+                                        <span class="font-extrabold text-primary text-xs block mt-1">Дублированный контроллер СХД</span>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="flex justify-center text-[10px] text-muted text-center">
-                                    双 Двойной независимый канал связи
+                            <!-- Key concepts: Independence & Structure -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-card p-4 rounded-xl border border-subtle">
+                                    <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Независимость</h5>
+                                    <p class="mt-1 text-xs">Компоненты не делятся общими ресурсами напрямую, чтобы поломка одного <a href="#" onclick="openTerm('узел'); return false;" class="term-link text-gold underline hover:text-amber-400">узла</a> не "утянула" за собой резервный.</p>
                                 </div>
-
-                                <div class="p-4 bg-page/60 border border-brandError rounded-xl text-center">
-                                    <span class="text-[10px] text-brandError font-bold uppercase tracking-wider block">Отказоустойчивое хранилище SAN/NAS</span>
-                                    <span class="font-extrabold text-primary text-xs block mt-1">Дублированный контроллер СХД</span>
+                                <div class="bg-card p-4 rounded-xl border border-subtle">
+                                    <h5 class="text-gold font-bold text-xs uppercase tracking-wider">Зонирование</h5>
+                                    <p class="mt-1 text-xs">Входной балансировщик распределяет нагрузку на изолированные Зону А и Зону Б, функционирующие в синхронном режиме.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Key concepts: Independence & Structure -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-card p-4 rounded-xl border border-subtle">
-                                <h5 class="text-brandError font-bold text-xs uppercase tracking-wider">Независимость</h5>
-                                <p class="mt-1 text-xs">Компоненты не делятся общими ресурсами напрямую, чтобы поломка одного <a href="#" onclick="openTerm('узел'); return false;" class="term-link text-gold underline hover:text-amber-400">узла</a> не "утянула" за собой резервный.</p>
-                            </div>
-                            <div class="bg-card p-4 rounded-xl border border-subtle">
-                                <h5 class="text-gold font-bold text-xs uppercase tracking-wider">Зонирование</h5>
-                                <p class="mt-1 text-xs">Входной балансировщик распределяет нагрузку на изолированные Зону А и Зону Б, функционирующие в синхронном режиме.</p>
+                        <!-- Tab 2: Logical Structure -->
+                        <div class="tab-panel tab-panel-logical hidden space-y-6">
+                            <div class="bg-card p-5 rounded-2xl border border-brandError/30 overflow-x-auto">
+                                <h4 class="text-brandError font-bold text-sm uppercase tracking-wider mb-6 text-center">
+                                    Логическая структура Титановой архитектуры (Слайд)
+                                </h4>
+                                <div class="min-w-[650px] space-y-4 p-2">
+                                    <!-- Actors -->
+                                    <div class="grid grid-cols-12 gap-4 text-center">
+                                        <div class="col-span-3"></div>
+                                        <div class="col-span-4 text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 py-1.5 rounded-lg border border-indigo-500/20">Изолированная Зона А</div>
+                                        <div class="col-span-5 text-xs font-bold text-red-400 uppercase tracking-widest bg-red-500/10 py-1.5 rounded-lg border border-red-500/20">Изолированная Зона Б</div>
+                                    </div>
+
+                                    <!-- Row 1: Слой представления -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[75px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой представления</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center hover:border-indigo-400">
+                                            <span class="text-xs text-primary font-bold">Логика (Физический сервер 1)</span>
+                                            <span class="text-[9px] text-muted">Обработка первичного трафика</span>
+                                        </div>
+                                        <div class="col-span-5 p-2.5 bg-page border border-subtle rounded-xl text-center h-full flex flex-col justify-center hover:border-red-400">
+                                            <span class="text-xs text-primary font-bold">Резерв логики (Блейд-сервер 2)</span>
+                                            <span class="text-[9px] text-muted">Горячее резервирование сессий</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 2: Слой бизнес-логики -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[75px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой бизнес-логики</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-indigo-950/20 border border-indigo-500/20 rounded-xl text-center h-full flex flex-col justify-center relative">
+                                            <span class="text-xs text-indigo-300 font-bold">Процессор приложения А</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs text-indigo-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-5 p-2.5 bg-red-950/20 border border-red-500/20 rounded-xl text-center h-full flex flex-col justify-center relative">
+                                            <span class="text-xs text-red-300 font-bold">Процессор приложения Б (Резерв)</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs text-red-400">▲▼</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 3: Слой доступа к данным -->
+                                    <div class="grid grid-cols-12 gap-4 items-center min-h-[85px]">
+                                        <div class="col-span-3 pr-4 text-right flex flex-col justify-center border-r border-subtle/50 h-full">
+                                            <span class="text-xs font-black text-primary">Слой доступа к данным</span>
+                                        </div>
+                                        <div class="col-span-4 p-2.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center h-full flex flex-col justify-center relative">
+                                            <span class="text-xs text-emerald-300 font-bold">СУБД Мастер (Master)</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs text-emerald-400">▲▼</div>
+                                        </div>
+                                        <div class="col-span-5 p-2.5 bg-red-950/20 border border-brandError/30 rounded-xl text-center h-full flex flex-col justify-center relative">
+                                            <span class="text-xs text-brandError font-bold">СУБД Реплика (Replica)</span>
+                                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-xs text-brandError">▲▼</div>
+                                            <!-- Synchronous database replication link -->
+                                            <div class="absolute -left-16 top-1/2 -translate-y-1/2 z-10 w-20 h-4 flex items-center justify-center">
+                                                <span class="text-brandError animate-pulse font-extrabold text-sm">◀▶</span>
+                                                <span class="absolute top-[-10px] text-[7px] text-brandError font-bold uppercase">Синхронно</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3496,6 +4241,30 @@
                     </div>
                 </div>
             `;
+        }
+        // Tab switcher for architecture diagrams
+        window.switchTheoryTab = function(btn, tabName, levelId) {
+            const container = btn.closest('.theory-content-wrapper');
+            if (!container) return;
+            
+            // Hide all tab panels
+            const panels = container.querySelectorAll('.tab-panel');
+            panels.forEach(p => p.classList.add('hidden'));
+            
+            // Show the target tab panel
+            const target = container.querySelector(`.tab-panel-${tabName}`);
+            if (target) target.classList.remove('hidden');
+            
+            // Reset all tab buttons state
+            const buttons = container.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('border-brandActive', 'text-primary', 'border-b-2', 'active');
+                b.classList.add('text-muted');
+            });
+            
+            // Set active button state
+            btn.classList.add('border-brandActive', 'text-primary', 'border-b-2', 'active');
+            btn.classList.remove('text-muted');
         }
 
         // Render Theory View for selected level
