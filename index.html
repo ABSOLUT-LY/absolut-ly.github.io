@@ -495,7 +495,11 @@
             "плк": { title: "Программируемый логический контроллер (ПЛК / PLC)", definition: "Промышленный защищенный микроконтроллер реального времени, используемый для автоматизации технологических процессов на производстве (сбор сигналов с датчиков и выработка команд исполнительным механизмам)." }
         ,
             "узел": { title: "Узел (Node)", definition: "Любое активное физическое или виртуальное устройство в составе информационной системы или компьютерной сети (компьютер, сервер, ПЛК, коммутатор, маршрутизатор), имеющее собственный уникальный сетевой адрес." },
-            "зеркалирование": { title: "Зеркалирование данных (Mirroring)", definition: "Технология непрерывного дублирования данных с одного физического накопителя (или массива) на другой в реальном времени для защиты от аппаратных сбоев и обеспечения моментального восстановления." }
+            "зеркалирование": { title: "Зеркалирование данных (Mirroring)", definition: "Технология непрерывного дублирования данных с одного физического накопителя (или массива) на другой в реальном времени для защиты от аппаратных сбоев и обеспечения моментального восстановления." },
+            "базовые_топологии_lan": { title: "Базовые топологии LAN", definition: "Физическая или логическая схема соединения узлов локальной вычислительной сети. К основным (базовым) топологиям относятся: общая шина (Bus), кольцо (Ring) и звезда (Star)." },
+            "шина_bus": { title: "Шина (Bus)", definition: "Топология локальной сети, в которой все рабочие станции подключены к общему линейному кабелю (каналу связи). Передаваемые данные доступны всем узлам, но принимаются только адресатом. На концах кабеля устанавливаются терминаторы для гашения сигналов." },
+            "кольцо_ring": { title: "Кольцо (Ring)", definition: "Топология локальной сети, в которой каждый компьютер соединен с двумя соседними, образуя замкнутый круг. Данные передаются последовательно в одном направлении и ретранслируются каждым узлом до тех пор, пока не достигнут получателя." },
+            "звезда_star": { title: "Звезда (Star)", definition: "Топология локальной сети, в которой все компьютеры и периферийные устройства подключаются напрямую к центральному коммутационному элементу (коммутатору или концентратору). Весь трафик проходит через центр, что повышает надежность системы при обрыве отдельных кабелей." }
         };
 
         const levelsData = [
@@ -729,12 +733,12 @@
 
                         <div class="bg-card p-5 rounded-2xl border border-subtle">
                             <h4 class="text-primary font-bold text-sm uppercase tracking-wider text-emerald-500">
-                                Базовые топологии LAN
+                                <a href="#" onclick="openTerm('базовые_топологии_lan'); return false;" class="term-link text-emerald-500 underline hover:text-emerald-400">Базовые топологии LAN</a>
                             </h4>
                             <div class="grid grid-cols-3 gap-2 mt-3 text-center text-xs">
-                                <div class="p-2 bg-page/50 rounded-lg border border-subtle">Шина (Bus)</div>
-                                <div class="p-2 bg-page/50 rounded-lg border border-subtle">Кольцо (Ring)</div>
-                                <div class="p-2 bg-page/50 rounded-lg border border-subtle">Звезда (Star)</div>
+                                <a href="#" onclick="openTerm('шина_bus'); return false;" class="p-2 bg-page/50 hover:bg-subtle/50 rounded-lg border border-subtle text-gold underline block transition-all">Шина (Bus)</a>
+                                <a href="#" onclick="openTerm('кольцо_ring'); return false;" class="p-2 bg-page/50 hover:bg-subtle/50 rounded-lg border border-subtle text-gold underline block transition-all">Кольцо (Ring)</a>
+                                <a href="#" onclick="openTerm('звезда_star'); return false;" class="p-2 bg-page/50 hover:bg-subtle/50 rounded-lg border border-subtle text-gold underline block transition-all">Звезда (Star)</a>
                             </div>
                         </div>
                     </div>
